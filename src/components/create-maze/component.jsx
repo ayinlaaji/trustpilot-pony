@@ -80,7 +80,7 @@ class CreateMaze extends Component {
               )}
             </div>
           ))}
-          <button onClick={this.handleClick}>Create maze</button>
+          <button onClick={this.handleClick}> Create maze </button>
         </form>
       </Div>
     );

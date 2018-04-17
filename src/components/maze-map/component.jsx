@@ -10,6 +10,8 @@ const Div = styled.div`
   border: 0px solid white;
   height: 80vh;
   width: 60%;
+  overflow-y: scroll;
+  overflow-x: scroll;
 `;
 
 const MazeMap = ({ mazeMap }) => (
