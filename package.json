@@ -1,0 +1,51 @@
+{
+  "name": "maze-runner",
+  "homepage": "./",
+  "author": "Ayinla Abdulsalam",
+  "email": "ayinlaabdulsalam@gmail.com",
+  "description": "Interview solution for trust pilot ",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "localforage": "^1.7.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-persist": "^4.9.1",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.4.0"
+  },
+  "devDependencies": {
+    "debug": "^3.1.0",
+    "eslint": "^4.16.0",
+    "flow-bin": "^0.63.1",
+    "husky": "^1.0.0-rc.1",
+    "lint-staged": "^7.0.4",
+    "prettier": "1.10.2",
+    "react-scripts": "1.1.4",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "test": "tape test | tap-spec",
+    "eject": "react-scripts eject"
+  },
+  "engines": {
+    "npm": ">=5",
+    "node": ">=8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "./node_modules/.bin/lint-staged"
+    }
+  },
+  "engineStrict": true,
+  "lint-staged": {
+    "*.{js,jsx,json,css,md}": ["prettier --write", "git add"]
+  },
+  "version": "0.1.0"
+}
