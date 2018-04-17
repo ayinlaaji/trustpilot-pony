@@ -34,7 +34,8 @@
     "start": "react-scripts start",
     "test": "tape test | tap-spec",
     "eject": "react-scripts eject",
-    "moveindex": "mv  build/index.html . && mv build/static/js/*js ./static/js"
+    "moveindex":
+      "mkdir -p ./static/js && cp build/index.html . && cp build/static/js/*js ./static/js"
   },
   "engines": {
     "npm": ">=5",
