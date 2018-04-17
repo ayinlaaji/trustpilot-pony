@@ -42,8 +42,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit":
-        "./node_modules/.bin/lint-staged && yarn build && yarn moveindex"
+      "pre-commit": "./node_modules/.bin/lint-staged",
+      "post-commit":
+        "& yarn build && yarn moveindex && git commit -m 'latest build'"
     }
   },
   "engineStrict": true,
