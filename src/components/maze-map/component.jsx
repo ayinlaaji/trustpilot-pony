@@ -8,7 +8,7 @@ const Div = styled.div`
   margin: 0 0.7rem;
   float: left;
   border: 0px solid white;
-  height: 90vh;
+  height: 80vh;
   width: 60%;
 `;
 

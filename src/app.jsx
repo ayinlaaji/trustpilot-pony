@@ -15,6 +15,15 @@ const Disp = ({ mazeMap, mazeId }) => (
       <a target="_blank" href="https://github.com/ayinlaaji/maze-runner">
         Source code on Github
       </a>
+      <h2>
+        Interview problem here :
+        <a
+          target="_blank"
+          href="https://ponychallenge.trustpilot.com/index.html"
+        >
+          Pony Challenge
+        </a>
+      </h2>
     </div>
     <MazeMap mazeId={mazeId} />
     <div style={{ float: "left", width: "20%" }}>
