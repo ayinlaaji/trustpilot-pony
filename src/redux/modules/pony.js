@@ -6,21 +6,11 @@ import { printMaze } from "./maze";
 const MOVE_PONY = "MOVE_PONY";
 
 // Actions
-/*export const movePony = payload => ({
-  type: MOVE_PONY,
-  payload
-});
-*/
+
 export const movePony = (id, direction) => {
-  return (dispatch, state) => {
-    const req = move(id, direction);
-    req
-      .then(({ data }) => {
-        return dispatch(printMaze(id));
-      })
-      .catch(err => {
-        //console.log(err);
-      });
+  return async (dispatch, state) => {
+    await move(id, direction);
+    return dispatch(printMaze(id));
   };
 };
 

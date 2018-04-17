@@ -20,17 +20,10 @@ const READ_MAZE_FAILED = `${READ_MAZE}_FAILED`;
 
 // Actions
 export const printMaze = id => {
-  return (dispatch, state) => {
+  return async (dispatch, state) => {
     dispatch({ type: CREATE_MAZE, payload: { isFetching: true } });
-
-    const res = apiPrintMaze(id);
-    res
-      .then(({ data }) => {
-        return dispatch(printMazeFulfilled({ mazeMap: data.trim() }));
-      })
-      .catch(err => {
-        //console.log(err);
-      });
+    const { data } = await apiPrintMaze(id);
+    return dispatch(printMazeFulfilled({ mazeMap: data.trim() }));
   };
 };
 
@@ -44,20 +37,14 @@ const printMazeFulfilled = payload => ({
   payload
 });
 
-export const createMaze = data => {
-  return (dispatch, state) => {
+export const createMaze = payload => {
+  return async (dispatch, state) => {
     dispatch({ type: CREATE_MAZE, payload: { isFetching: true } });
 
-    const res = apiCreateMaze(data);
-    res
-      .then(({ data }) => {
-        const mazeId = data.maze_id;
-        dispatch(createMazeFulfilled({ mazeId }));
-        return dispatch(printMaze(mazeId));
-      })
-      .catch(err => {
-        //console.log(err);
-      });
+    const { data } = await apiCreateMaze(payload);
+    const mazeId = data.maze_id;
+    dispatch(createMazeFulfilled({ mazeId }));
+    return dispatch(printMaze(mazeId));
   };
 };
 
