@@ -11,6 +11,11 @@ import PonyControls from "./components/pony-controls";
 
 const Disp = ({ mazeMap, mazeId }) => (
   <div>
+    <div style={{ margin: "0.5rem 0", marginLeft: "0.6rem" }}>
+      <a target="_blank" href="https://github.com/ayinlaaji/maze-runner">
+        Source code on Github
+      </a>
+    </div>
     <MazeMap mazeId={mazeId} />
     <div style={{ float: "left", width: "20%" }}>
       <CreateMaze />
