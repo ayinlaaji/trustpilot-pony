@@ -32,7 +32,8 @@
     "build": "react-scripts build",
     "start": "react-scripts start",
     "test": "tape test | tap-spec",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "moveindex": "mv  build/index.html . && mv build/static/js/*js ./static/js"
   },
   "engines": {
     "npm": ">=5",
@@ -40,7 +41,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "./node_modules/.bin/lint-staged"
+      "pre-commit":
+        "./node_modules/.bin/lint-staged && yarn build && yarn moveindex"
     }
   },
   "engineStrict": true,
