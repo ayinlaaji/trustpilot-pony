@@ -44,7 +44,7 @@
     "hooks": {
       "pre-commit": "./node_modules/.bin/lint-staged",
       "post-commit":
-        "& yarn build && yarn moveindex && git commit -m 'latest build'"
+        "yarn build && yarn moveindex && git commit -m 'latest build'"
     }
   },
   "engineStrict": true,
