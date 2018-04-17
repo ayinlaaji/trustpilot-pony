@@ -42,9 +42,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "./node_modules/.bin/lint-staged",
-      "post-commit":
-        "yarn build && yarn moveindex && git commit -m 'latest build'"
+      "pre-commit": "./node_modules/.bin/lint-staged"
     }
   },
   "engineStrict": true,
